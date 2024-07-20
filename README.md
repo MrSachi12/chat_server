@@ -20,7 +20,6 @@ Yeh hai magic trick! ✨ Use `@<username>` to send a private message. Server ko 
 ### Example:
 @tester Hello dosto !!!
 
-Server bas yeh show karega ki message kisne bheja aur kisne receive kiya. Ab yeh toh sach mein freedom hai! 🕶️
 
 ## 🤩 Why You’ll Love It
 
