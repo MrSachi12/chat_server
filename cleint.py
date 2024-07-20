@@ -2,7 +2,7 @@ import socket
 import threading
 
 def receive_messages(client_socket):
-    """Receives messages from the server and print to the user"""
+    """ Server se messages receive karta hai aur user ko print karta hai """
     while True:
         try:
             message = client_socket.recv(1024).decode('utf-8')
@@ -14,42 +14,42 @@ def receive_messages(client_socket):
             break
 
 def start_client(server_ip, server_port):
-    # user connects to the server using his ip and port to the ip of server and port 
+    # User server se connect hota hai using server IP aur port
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client_socket.connect((server_ip, server_port))
     
-    # ask for username and send so msg can be send to him as the server checks if the user is connected or not 
+    # Username puchhna aur server ko bhejna taaki server check kar sake ki user connected hai ya nahi
     username = input("Enter your username: ")
     client_socket.sendall(username.encode('utf-8'))
     print("Welcome to the chat! Type 'exit' to leave.")
-    # multiple connection establish karta hai so maultiple user ek sath msg ka sake 
+
+    # Ek alag thread create karna jo server se messages receive karega aur print karega
     receive_thread = threading.Thread(target=receive_messages, args=(client_socket,))
     receive_thread.daemon = True
     receive_thread.start()
 
     while True:
-        # simple ask for msg
+        # User se message input lena
         message = input(">>> ")
         if message.lower() == 'exit':
             break
-        # this is same brain fryer code that sees the @ in the start if is present of present then it send the 
-        # msg to the partiular username only via sending username and server checks the username with ip and send the 
-        # msg and server doesn't print that msg and nor store it means fully private 
+        # Agar message '@' se start hota hai, toh private message bhejna
         elif message.startswith('@'):
-            target_username = message.split(' ', 1)[0][1:]
+            target_username = message.split(' ', 1)[0][1:]  # '@' hata do aur username nikaalo
             if ' ' in message:
-                msg_to_send = message.split(' ', 1)[1]
+                msg_to_send = message.split(' ', 1)[1]  # Private message nikaalo
                 client_socket.sendall(f"@{target_username} {msg_to_send}".encode('utf-8'))
                 print(f"You sent a private message to {target_username}")
             else:
                 print("Invalid private message format. Use @username message")
         else:
+            # Normal message bhejna
             client_socket.sendall(message.encode('utf-8'))
 
     client_socket.close()
 
 if __name__ == '__main__':
-    # this ask for the ip of the server and port to connect
+    # Server ke IP aur port puchhna taaki client connect kar sake
     server_ip = input("Enter the server IP address: ")
     server_port = int(input("Enter the server port: "))
     start_client(server_ip, server_port)
