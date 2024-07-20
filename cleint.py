@@ -2,11 +2,14 @@ import socket
 import threading
 
 def receive_messages(client_socket):
-    """ Server se messages receive karega aur display karega. """
+    """ Receive messages from the server and display them. """
     while True:
         try:
             message = client_socket.recv(1024).decode('utf-8')
-            print(f"\n{message}\n>>> ", end='', flush=True)
+            if message:
+                print(f"\n{message}\n>>> ", end='', flush=True)
+            else:
+                break
         except ConnectionResetError:
             break
 
@@ -17,8 +20,9 @@ def start_client(server_ip, server_port):
     while True:
         username = input("Please enter your username: ")
         client_socket.sendall(username.encode('utf-8'))
-        if username in client_names.values():
-            print("Username already taken. Please choose another one.")
+        response = client_socket.recv(1024).decode('utf-8')
+        if response == "Username already taken. Please choose another one.":
+            print(response)
         else:
             break
 
@@ -31,6 +35,7 @@ def start_client(server_ip, server_port):
     while True:
         message = input(">>> ")
         if message.lower() == 'exit':
+            client_socket.sendall(message.encode('utf-8'))
             break
         elif message.startswith('@'):
             target_username = message.split(' ', 1)[0][1:]
