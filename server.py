@@ -1,17 +1,17 @@
 import socket
 import threading
 
-clients = {}  # Yeh dictionary client ke usernames aur sockets ko store karega
-client_names = {}  # Yeh dictionary client ke sockets aur usernames ko map karega
-client_addresses = {}  # Yeh dictionary client ke usernames aur unke addresses ko store karega
+clients = {}  # Dictionary jisme client ke usernames aur sockets store honge
+client_names = {}  # Dictionary jo client sockets ko usernames se map karega
+client_addresses = {}  # Dictionary jisme client usernames aur unke addresses store honge
 
 def handle_client(client_socket, client_address):
     """ Naya client connection handle karega. """
-    print(f"New connection from {client_address}")
+    print(f"\n{'-'*40}\nNew connection from {client_address}")
 
     # Username puchna aur validate karna
     while True:
-        client_socket.sendall(b"Enter your username: ")
+        client_socket.sendall(b"Please enter your username: ")
         username = client_socket.recv(1024).decode('utf-8').strip()
         if username in clients:
             client_socket.sendall(b"Username already taken. Please choose another one.\n")
@@ -39,11 +39,11 @@ def handle_client(client_socket, client_address):
                 
             elif message.startswith('@'):
                 # Private messages handle karna
-                parts = message[1:].split(' ', 1) # @ hata do
+                parts = message[1:].split(' ', 1)  # @ hata do
                 if len(parts) == 2:
-                    target_username, private_message = parts # username aur message ko split karo
+                    target_username, private_message = parts  # Username aur message ko split karo
                     if target_username in clients:
-                        target_socket = clients[target_username] # target client ka socket
+                        target_socket = clients[target_username]  # Target client ka socket
                         target_socket.sendall(f"<{username} (private)> :: {private_message}".encode('utf-8'))
                         print(f"Private message from {username} ({client_address[0]}:{client_address[1]}) to {target_username} ({client_addresses[target_username][0]}:{client_addresses[target_username][1]})")
                     else:
@@ -65,7 +65,7 @@ def handle_client(client_socket, client_address):
     del clients[username]
     del client_names[client_socket]
     del client_addresses[username]
-    print(f"Connection from {client_address} closed")
+    print(f"Connection from {username} : {client_address} closed\n{'-'*40}")
 
 def broadcast(message, source_socket):
     # Message sabhi clients ko bhejna (sender ko chhod kar)
@@ -82,7 +82,7 @@ def start_server(host='0.0.0.0', port=5000):
     server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
     server_socket.bind((host, port))
     server_socket.listen(5)
-    print(f"Chat server started on {host}:{port}")
+    print(f"\n{'='*40}\nChat server started on {host}:{port}\n{'='*40}")
 
     while True:
         # Connection accept karne ke liye loop
@@ -90,5 +90,5 @@ def start_server(host='0.0.0.0', port=5000):
         client_handler = threading.Thread(target=handle_client, args=(client_socket, client_address))
         client_handler.start()
 
-if __name__ == '__main__': # Server start karna
+if __name__ == '__main__':  # Server start karna
     start_server()
