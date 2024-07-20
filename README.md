@@ -20,6 +20,11 @@ Yeh hai magic trick! ✨ Use `@<username>` to send a private message. Server ko 
 ### Example:
 @tester Hello dosto !!!
 
+## 💬 ?list
+
+Ye ek important command hai is server jab cleint matblab user jab use karega tab server use list of user connected return karega tab use ye private msg bhi kar sakta hai
+
+
 
 ## 🤩 Why You’ll Love It
 
