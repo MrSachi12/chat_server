@@ -30,8 +30,9 @@ The client code is responsible for:
 
 Yeh hai magic trick! ✨ Use `@<username>` to send a private message. Server ko bas yeh pata chalega ki kisne private message bheja aur kisne receive kiya. Server ko message content nahi dikhega—bas jo bhej raha hai aur kisko bhej raha hai. Itna freedom toh dena banta hai na? 🤫
 
-### Example:
-@tester Hello dosto !!!
+### Take a look:
+![image](https://github.com/user-attachments/assets/c22b5382-8a2d-4707-850d-fd6c584e4364)
+
 
 ## 💬 ?list
 
