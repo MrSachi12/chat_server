@@ -42,6 +42,7 @@ Ye ek important command hai is server jab cleint matblab user jab use karega tab
 We’ve added a sleek new graphical user interface (GUI) to Project TAlk using **CustomTkinter**. The new interface is user-friendly, visually appealing, and makes chatting even more enjoyable! The updated design features rounded corners, intuitive buttons, and a modern look.
 
 **To see the new GUI in action, check out the screenshot below:**
+![Screenshot](chat.png)
 
 ![Screenshot](path/to/your/screenshot.png)
 
