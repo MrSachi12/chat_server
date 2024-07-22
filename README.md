@@ -44,7 +44,6 @@ We’ve added a sleek new graphical user interface (GUI) to Project TAlk using *
 **To see the new GUI in action, check out the screenshot below:**
 ![Screenshot](chat.png)
 
-![Screenshot](path/to/your/screenshot.png)
 
 ## 🛠️ Mechanism
 
