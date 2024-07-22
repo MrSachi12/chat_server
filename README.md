@@ -24,6 +24,9 @@ Yeh hai magic trick! ✨ Use `@<username>` to send a private message. Server ko 
 
 Ye ek important command hai is server jab cleint matblab user jab use karega tab server use list of user connected return karega tab use ye private msg bhi kar sakta hai
 
+## 🆕 New GUI with CustomTkinter
+
+We’ve added a sleek new graphical user interface (GUI) to Project TAlk using **CustomTkinter**. The new interface is user-friendly, visually appealing, and makes chatting even more enjoyable! The updated design features rounded corners, intuitive buttons, and a modern look.
 
 
 ## 🤩 Why You’ll Love It
@@ -32,6 +35,6 @@ Ye ek important command hai is server jab cleint matblab user jab use karega tab
 - **Private Messaging**: Apne secrets ko safe rakho bina kisi ke dekhe.
 - **Fun & Simple**: Friends ke saath quick chat ke liye ya Python skills test karne ke liye perfect!
 
-Mujhe ummeed hai ki aap Project TAlk ko enjoy karenge jitna maine isse banate waqt kiya [with fried brain] . Happy chatting! 🎈
+Mujhe ummeed hai ki aap Project TAlk ko enjoy karenge jitna maine isse banate waqt kiya [with fried brain]. Happy chatting! 🎈
 
 **THANKU** aur happy chatting! 😄
