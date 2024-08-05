@@ -17,11 +17,11 @@ For a visual guide on setting up and using the Chat Server and Client Applicatio
 
 ### Chat Server Interface
 
-![Chat Server](path_to_server_screenshot.png)
+![Chat Server](chat.png)
 
 ### Chat Client Interface
 
-![Chat Client](path_to_client_screenshot.png)
+![Chat Client](image.png)
 
 ## 🌟 Features
 
