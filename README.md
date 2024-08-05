@@ -1,4 +1,4 @@
-# 🚀 Chat Server and Client Application
+# 🚀 Project TAlko
 
 Welcome to the Chat Server and Client Application! This Python-based chat system facilitates real-time communication between users and is perfect for internal communication within institutions and companies. It utilizes the `socket` library for networking and `customtkinter` for a modern GUI.
 
