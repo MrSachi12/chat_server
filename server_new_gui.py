@@ -123,7 +123,7 @@ class ChatServerGUI(ctk.CTk):
                                 target_socket.sendall(f"{username} (private): {private_message}".encode('utf-8'))
                                 client_socket.sendall(f"Private message sent to {target_username}\n".encode('utf-8'))
                                 # Sender aur receiver info ke saath log print karein
-                                self.log_message(f"{datetime.now()} - Private message bheja from {username}: {client_address[0]}/{client_address[1]} to {target_username}: {target_address[0]}/{target_address[1]}")
+                                self.log_message(f"{datetime.now()} - Private message  from {username}: {client_address[0]}/{client_address[1]} to {target_username}: {target_address[0]}/{target_address[1]}")
                             else:
                                 client_socket.sendall(f"User {target_username} not found".encode('utf-8'))
                     else:
