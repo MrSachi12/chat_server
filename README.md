@@ -42,7 +42,7 @@ Handles client interactions and message processing:
 
 1. **Logging New Connections**
 
-```python
+```
 self.log_message(f"{datetime.now()} - New connection from {client_address}")
 ```
 
@@ -50,7 +50,7 @@ Requests a username from the cleint
 
 2 . **Checking Usernames Uniqueness**
 
-'''python
+'''
 with clients_lock:
     if username in clients:
         client_socket.sendall(b"Username already taken. Please choose another one.\n")
@@ -66,7 +66,7 @@ Ensure the username is unique and registers it if available.
 
 3. **Processing incoming messages**
 
-'''python
+'''
 while True:
     try:
         message = client_socket.recv(1024).decode('utf-8')
@@ -79,7 +79,7 @@ Recevies and process messages from the cleint.
 4.**Handling Special commands**
 
 i] *Listing Connected Users*
-'''python
+'''
 if message.startswith('?list'):
     user_list = '\n'.join(clients.keys())
     client_socket.sendall(f"\nConnected users:\n{user_list}\n".encode('utf-8'))
@@ -88,7 +88,7 @@ if message.startswith('?list'):
 Sends a list of currently connected users.
 
 ii] *Handling Private Messages*
-'''python
+'''
 elif message.startswith('@'):
     parts = message[1:].split(' ', 1)
     if len(parts) == 2:
@@ -106,7 +106,7 @@ elif message.startswith('@'):
 '''
 
 iii] *Broadcasting Messages*
-'''python
+'''
 else:
     broadcast_message = f"{username}: {message}"
     with clients_lock:
@@ -118,7 +118,7 @@ else:
 Broadcasts messages to all connected users.
 
 iv] *Handling Disconnections*
-'''python
+'''
 except ConnectionResetError:
     break
 with clients_lock:
@@ -133,7 +133,7 @@ cleans up when a cleint disconnects.
 ### 🖥️ Client Code
 
 ## Connecting to the server
-'''python
+'''
 def connect_to_server(self):
     self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     try:
@@ -157,7 +157,7 @@ def connect_to_server(self):
 connects to the server and sends the username.
 
 ## Sending Messages
-'''python
+'''
 def send_message(self, event=None):
     message = self.message_entry.get()
     if message:
@@ -185,7 +185,7 @@ def send_message(self, event=None):
 Sends different types of messages to the server (public, private, list).
 
 ## Receiving Messages
-'''python
+'''
 def receive_messages(self):
     while True:
         try:
@@ -197,7 +197,7 @@ def receive_messages(self):
 Receives and displays messages from other clients.
 
 ## Displaying Messages
-'''python
+'''
 def display_message(self, message, tag):
     self.chat_display.configure(state="normal")
     if tag == "sent":
