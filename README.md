@@ -17,7 +17,7 @@ For a visual guide on setting up and using the Chat Server and Client Applicatio
 
 ### Chat Server Interface
 
-![Chat Server](server.png)
+![Chat Server](server..py.png)
 
 ### Chat Client Interface
 ![Chat Server](chat.png)
