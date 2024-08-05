@@ -17,16 +17,17 @@ For a visual guide on setting up and using the Chat Server and Client Applicatio
 
 ### Chat Server Interface
 
-![Chat Server](chat.png)
+![Chat Server](server.png)
 
 ### Chat Client Interface
+![Chat Server](chat.png)
 
 ![Chat Client](image.png)
 
 ## 🌟 Features
 
 - **Start and Stop Server**: Manage server operations effortlessly.
-- **User Registration**: Unique usernames for client access.
+- **User Login**: Unique usernames for client access.
 - **List Connected Users**: Retrieve a list of currently connected users.
 - **Private Messaging**: Send direct messages to other users.
 - **Broadcast Messaging**: Share messages with all connected users.
