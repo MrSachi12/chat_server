@@ -9,9 +9,6 @@ Welcome to the Chat Server and Client Application! This Python-based chat system
 - **CustomTkinter**: Enhances Tkinter for a modern UI experience.
 - **Datetime**: Used for timestamping log entries.
 
-## 🎥 Tutorial Video
-
-For a visual guide on setting up and using the Chat Server and Client Application, check out our [Tutorial Video](#).
 
 ## 🖼 Screenshots
 
@@ -207,8 +204,32 @@ def display_message(self, message, tag):
 ```
 Inserts and colors messages in the chat window based on the message type.
 
+### 📥 Download Executables
+
+You can download the executable versions of the Chat Server and Client from the following link: [Download Executables](http://bit.ly/talko)
+
+## 🏢 Usage: Ideal for Institutions and Companies
+
+### 📌 Overview
+
+The Chat Server and Client Application provides a secure, internal messaging solution for institutions and companies. It offers a private communication platform without relying on external apps like WhatsApp.
+
+### 🛡 Key Benefits
+
+- **Internal Communication**: Enables secure messaging within your organization.
+- **Enhanced Security**: Operates on your local network, minimizing data breach risks.
+- **Supervised Environment**: Allows monitoring and control of internal communications.
+
+
+### 🔐 Security and Privacy
+
+- **Local Network Access**: Restricts access to within the organization.
+- **No External Dependencies**: Avoids third-party vulnerabilities.
+
+This application is perfect for those needing a controlled, internal communication system without relying on external services.
+
 ## 📬 Contact
 
 **Support Contact**: For any issues, please contact [sachi20120227@gmail.com](mailto:sachi20120227@gmail.com)
 
-*Made by Miu ALfha Product.*
+*A Product of  Miu ALfha .*
